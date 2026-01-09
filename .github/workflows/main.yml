@@ -31,6 +31,8 @@ jobs:
                 pip install -r src/requirements.txt
 
             - name: Run Unit Tests
+              env:
+                REDIS_HOST: localhost
               run: |
                 export PYTHONPATH=$PYTHONPATH:$(pwd)/src
                 python src/tests/test_app.py
